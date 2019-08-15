@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">GhostMaskEditText</string>
+
+    <string name="country_kz">Kazakhstan     (+7)</string>
+    <string name="country_kg">Kyrgyzstan    (+996)</string>
+</resources>
