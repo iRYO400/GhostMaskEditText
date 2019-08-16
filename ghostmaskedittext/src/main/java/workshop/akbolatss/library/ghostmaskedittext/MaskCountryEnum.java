@@ -2,8 +2,8 @@ package workshop.akbolatss.library.ghostmaskedittext;
 
 public enum MaskCountryEnum implements MaskCountry {
 
-    KZ(R.string.country_kz, R.drawable.ic_flag_kz, "KZ", "7", "+7 (", "+7 (___) ___-__-__", 11),
-    KG(R.string.country_kg, R.drawable.ic_flag_kg, "KG", "996", "+996 (", "+996 (___) __-__-__", 12);
+    KZ(R.string.country_kz, R.drawable.ic_kazakhstan, "KZ", "7", "+7 (", "+7 (___) ___-__-__", 11),
+    KG(R.string.country_kg, R.drawable.ic_kyrgyzstan, "KG", "996", "+996 (", "+996 (___) __-__-__", 12);
 
     private int nameResId;
     private int iconResId;

@@ -14,7 +14,7 @@ import androidx.appcompat.widget.AppCompatEditText;
 public class GhostMaskEditText extends AppCompatEditText implements TextWatcher {
 
     private String mask;
-    private MaskCountryEnum maskEnum;
+    private MaskCountry maskEnum;
 
     private boolean isMaskEnabled = true;
     private boolean isSettingNewMask = false;
@@ -23,14 +23,23 @@ public class GhostMaskEditText extends AppCompatEditText implements TextWatcher 
     private boolean isDeleting = false;
 
     private boolean forceClear = false;
-    private boolean isGhostMaskVisible = false;
+    private boolean isGhostMaskVisible = true;
 
     public GhostMaskEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
         onImplementListeners();
     }
 
-    public void setMaskEnum(MaskCountryEnum muskEnum) {
+    /**
+     * Adding TextWatcher
+     * P.S. Remember, EditText can contain more than one listener
+     * So dont forget to remove unnecessary
+     */
+    private void onImplementListeners() {
+        super.addTextChangedListener(this);
+    }
+
+    public void setMaskEnum(MaskCountry muskEnum) {
         isSettingNewMask = true;
         this.maskEnum = muskEnum;
         this.mask = muskEnum.getPhoneMask();
@@ -40,7 +49,7 @@ public class GhostMaskEditText extends AppCompatEditText implements TextWatcher 
     }
 
     /**
-     * Force clear text
+     * Force clear text without triggering Mask
      */
     public void forceClear() {
         forceClear = true;
@@ -54,6 +63,9 @@ public class GhostMaskEditText extends AppCompatEditText implements TextWatcher 
         this.isMaskEnabled = enabled;
     }
 
+    /**
+     * True, mask will be drawn, otherwise not
+     */
     public void setGhostMaskVisible(boolean ghostMaskVisible) {
         isGhostMaskVisible = ghostMaskVisible;
     }
@@ -186,11 +198,4 @@ public class GhostMaskEditText extends AppCompatEditText implements TextWatcher 
         return new InputFilter[]{new InputFilter.LengthFilter(maskText.length())};
     }
 
-    /**
-     * Adding TextWatcher
-     * P.S. Remember, EditText can contain more than one listener
-     */
-    private void onImplementListeners() {
-        super.addTextChangedListener(this);
-    }
 }
