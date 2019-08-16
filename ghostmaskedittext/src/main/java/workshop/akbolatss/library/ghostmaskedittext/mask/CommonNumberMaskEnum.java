@@ -1,6 +1,9 @@
-package workshop.akbolatss.library.ghostmaskedittext;
+package workshop.akbolatss.library.ghostmaskedittext.mask;
 
-public enum MaskCountryEnum implements MaskCountry {
+import workshop.akbolatss.library.ghostmaskedittext.R;
+import workshop.akbolatss.library.ghostmaskedittext.api.CommonNumberMask;
+
+public enum CommonNumberMaskEnum implements CommonNumberMask {
 
     KZ(R.string.country_kz, R.drawable.ic_kazakhstan, "KZ", "7", "+7 (", "+7 (___) ___-__-__", 11),
     KG(R.string.country_kg, R.drawable.ic_kyrgyzstan, "KG", "996", "+996 (", "+996 (___) __-__-__", 12);
@@ -13,7 +16,7 @@ public enum MaskCountryEnum implements MaskCountry {
     private String phoneMask;
     private int digitsCount;
 
-    MaskCountryEnum(int nameResId, int iconResId, String countryIso, String countryCode, String countryCodeWithMisc, String phoneMask, int digitsCount) {
+    CommonNumberMaskEnum(int nameResId, int iconResId, String countryIso, String countryCode, String countryCodeWithMisc, String phoneMask, int digitsCount) {
         this.nameResId = nameResId;
         this.iconResId = iconResId;
         this.countryIso = countryIso;

@@ -1,4 +1,4 @@
-package workshop.akbolatss.library.ghostmaskedittext;
+package workshop.akbolatss.library.ghostmaskedittext.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -11,10 +11,12 @@ import android.util.AttributeSet;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatEditText;
 
+import workshop.akbolatss.library.ghostmaskedittext.api.CommonNumberMask;
+
 public class GhostMaskEditText extends AppCompatEditText implements TextWatcher {
 
     private String mask;
-    private MaskCountry maskEnum;
+    private CommonNumberMask maskEnum;
 
     private boolean isMaskEnabled = true;
     private boolean isSettingNewMask = false;
@@ -39,7 +41,7 @@ public class GhostMaskEditText extends AppCompatEditText implements TextWatcher 
         super.addTextChangedListener(this);
     }
 
-    public void setMaskEnum(MaskCountry muskEnum) {
+    public void setMaskEnum(CommonNumberMask muskEnum) {
         isSettingNewMask = true;
         this.maskEnum = muskEnum;
         this.mask = muskEnum.getPhoneMask();

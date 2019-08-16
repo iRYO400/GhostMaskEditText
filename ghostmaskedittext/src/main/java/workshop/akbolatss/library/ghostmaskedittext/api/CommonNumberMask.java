@@ -1,6 +1,6 @@
-package workshop.akbolatss.library.ghostmaskedittext;
+package workshop.akbolatss.library.ghostmaskedittext.api;
 
-public interface MaskCountry {
+public interface CommonNumberMask {
 
     int getNameResId();
 

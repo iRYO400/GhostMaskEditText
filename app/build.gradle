@@ -18,6 +18,11 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     dataBinding {
         enabled = true
     }
@@ -27,7 +32,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':ghostmaskedittext')
 
-//    implementation 'com.github.iRYO400:GhostMaskEditText:0.1'
+//    implementation 'com.github.iRYO400:GhostMaskEditText:0.2'
 
 
     implementation 'androidx.appcompat:appcompat:1.0.2'

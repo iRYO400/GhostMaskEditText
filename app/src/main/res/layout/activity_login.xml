@@ -13,7 +13,7 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         tools:context=".ui.login.LoginActivity">
 
-        <workshop.akbolatss.library.ghostmaskedittext.GhostMaskEditText
+        <workshop.akbolatss.library.ghostmaskedittext.widget.GhostMaskEditText
             android:id="@+id/phone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -98,5 +98,16 @@
             app:layout_constraintBottom_toTopOf="@+id/phone"
             app:layout_constraintStart_toEndOf="@+id/country_kz"
             app:srcCompat="@drawable/ic_kyrgyzstan" />
+
+        <ImageView
+            android:id="@+id/country_usa"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toTopOf="@+id/phone"
+            app:layout_constraintEnd_toEndOf="@+id/phone"
+            app:srcCompat="@drawable/ic_united_states" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

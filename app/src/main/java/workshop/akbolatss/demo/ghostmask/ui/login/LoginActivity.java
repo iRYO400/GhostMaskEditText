@@ -10,8 +10,10 @@ import androidx.lifecycle.ViewModelProviders;
 
 import workshop.akbolatss.demo.ghostmask.R;
 import workshop.akbolatss.demo.ghostmask.databinding.ActivityLoginBinding;
-import workshop.akbolatss.library.ghostmaskedittext.MaskCountry;
-import workshop.akbolatss.library.ghostmaskedittext.MaskCountryEnum;
+import workshop.akbolatss.demo.ghostmask.ui.login.custom.CustomPhoneMasks;
+import workshop.akbolatss.library.ghostmaskedittext.api.CommonNumberMask;
+import workshop.akbolatss.library.ghostmaskedittext.mask.CommonNumberMaskEnum;
+import workshop.akbolatss.library.ghostmaskedittext.mask.SimpleNumberMaskEnum;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -32,9 +34,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void observeViewModel() {
-        viewModel.country.observe(this, new Observer<MaskCountry>() {
+        viewModel.country.observe(this, new Observer<CommonNumberMask>() {
             @Override
-            public void onChanged(MaskCountry maskCountry) {
+            public void onChanged(CommonNumberMask maskCountry) {
                 binding.phone.setMaskEnum(maskCountry);
                 binding.phone.requestFocus();
             }
@@ -45,13 +47,19 @@ public class LoginActivity extends AppCompatActivity {
         binding.countryKz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewModel.country.setValue(MaskCountryEnum.KZ);
+                viewModel.country.setValue(CommonNumberMaskEnum.KZ);
             }
         });
         binding.countryKg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewModel.country.setValue(MaskCountryEnum.KG);
+                viewModel.country.setValue(SimpleNumberMaskEnum.KG);
+            }
+        });
+        binding.countryUsa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewModel.country.setValue(CustomPhoneMasks.US);
             }
         });
     }
